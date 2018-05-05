@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>BAdmus Ent.</title>
+	<link rel="stylesheet" type="text/css" href="css/badmus_style.css">
+	<!-- <script type="text/javascript">
+		window.onload = function() 
+		{
+			document.addEventListener('deviceready', init, false);
+			init();
+		}
+			function init()
+			{
+				navigator.geolocation.watchPosition(showPosition, showError);
+			}
+			function showPosition(position)
+			{
+				var latitude = position.coords.latitude;
+				var longitude = position.coords.longitude;
+				
+				var accuracy = position.coords.accuracy;
+				var time = position.timestamp;
+				var speed = position.coords.speed;
+				var head = position.coords.heading;
+				
+				document.getElementById('locate').innerHTML = 'longitude: ' + longitude + ' latitude: ' + latitude + ' accuracy: ' + accuracy + ' time: ' + time + ' speed: ' + speed;
+			}
+			function showError(error)
+			{
+				alert(error.message);
+			}
+	</script> -->
+</head>
+
+<body class="body">
+	<div class="header">
+		<div class="top_header">
+			<h1 class="top_header_text">Header</h1>
+		</div>
+		<div class="bottom_header">
+			<a href="#" class="home">home</a>
+			<a href="#" class="our_team">our team</a>
+			<a href="#" class="projects">projects</a>
+			<a href="#" class="contact">contact</a>
+			<form action="#" class="form" method="get">
+				<input type="search" name="search" class="search_field" />
+				<button class="go_button">Go!</button>
+
+			</form>
+		</div>
+	</div>
+	<div class="content_container">
+		<div class="content-light" id="for_switch">
+			<div class="sun" id="sun">
+
+			</div>
+
+
+			<div class="stand">
+				<div class="blade1"></div>
+				<div class="blade2"></div>
+				<div class="holder"></div>
+				<div class="hole">Manuel P</div>
+			</div>
+			<button id="switch_page">OFF Light</button>
+
+
+		</div>
+		<div class="side_bar">
+
+		</div>
+		<div class="footer">
+			<span id="locate"></span>
+
+		</div>
+
+	</div>
+	<script>
+		var switchPage = document.getElementById('switch_page');
+		var surrounding = document.getElementById('for_switch');
+		var switchPageTwo = document.getElementById('switch_page2');
+		var sun = document.getElementById('sun');
+		var clickCount = 0;
+		//var sunPos = 349;
+		//var isSun = true;
+
+			switchPage.onclick = function() {
+				if (clickCount == 0){
+					surrounding.setAttribute('class', 'content-dark')
+					switchPage.setAttribute('id', 'switch_page2');
+					switchPage.innerText = 'On Light';
+					sun.setAttribute('class', 'moon');
+					//isSun = false;
+					clickCount += 1;
+				} else {
+					surrounding.setAttribute('class', 'content-light');
+					switchPage.setAttribute('id', 'switch_page');
+					switchPage.innerText = 'Off Light';
+					sun.setAttribute('class', 'sun');
+					//isSun = true;
+					clickCount = 0;
+				}
+			};
+
+			/* function sunRise(){
+				sun.style.top = sunPos + 'px';
+				sunPos -= 10;
+			}
+
+			sunRise();
+			
+			if(isSun){
+				var riseSun = setInterval(sunRise, 1000)
+				if(sunPos <= 20){
+					clearInterval(riseSun);
+					}
+				} */
+
+		
+	
+	</script>
+
+
+</body>
+
+</html>
